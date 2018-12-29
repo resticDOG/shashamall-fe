@@ -1,0 +1,33 @@
+/*
+* @Author: linkzz
+* @Date:   2018-12-29 17:32:17
+* @Last Modified by:   linkzz
+* @Last Modified time: 2018-12-29 18:07:49
+*/
+/* 容器footer */
+.footer{
+    color: #666;
+    padding-bottom: 10px; 
+}
+
+.footer .links{
+    text-align: center;
+    line-height: 30px;
+}
+
+.footer .links .link{
+    padding:0 10px;
+}
+
+.footer .copyright{
+    text-align: center;
+    line-height: 30px;
+}
+
+.footer .copyright .copyright-text{
+    padding: 0 10px;
+}
+
+.footer .copyright .copyright-text .link{
+    padding: 0 10px;
+}

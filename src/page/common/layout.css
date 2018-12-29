@@ -1,0 +1,103 @@
+/**
+ *  @author linkzz
+ *  @date 2018.12.28
+ */
+
+/* css reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #f6f6f6;
+    font: 12px/1.5 tahoma, arial, Microsoft YaHei, sans-serif;
+}
+
+li{
+    list-style: none;
+}
+
+img{
+    display: block;
+    border: none;
+}
+
+label{
+    cursor: pointer;
+}
+
+input[type='checkbox']{
+    cursor: pointer;
+}
+
+/* 定宽布局 */
+.w{
+    width: 1080px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 全局通用样式 */
+
+/* 隐藏类 */
+.hide{
+    display: none;
+}
+
+/* 超链接样式 */
+.link{
+    color: #999;
+    cursor: pointer;    /* 会有一个小手图标 */
+    text-decoration: none; /* 去除下划线 */
+}
+
+/* 悬浮在链接上方 */
+.link:hover{
+    color: #e80012;
+    text-decoration: none;
+}
+
+/* 仿a标签类 */
+.link-text{
+    color: #999;
+    text-decoration: none;
+}
+
+/* 按钮样式 */
+.btn{
+    display: inline-block;  /* 让其有一定的宽度 */
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;     /* 防止和其他样式冲突 */
+    border: none;
+    background: #c60023;
+    font-size: 17px;
+    font-weight: bold;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-mini{
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    padding: 0 10px;
+
+}
+
+/* loading样式 */
+.loading{
+    display: block;
+    margin: 10px auto;
+    height: 220px;
+    width: 220px;
+    background: url(../../image/icon/loading.gif) no-repeat;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* 圆角 */
+    opacity: .6;        /* 透明度 */
+}

@@ -1,0 +1,36 @@
+/*
+* @Author: linkzz
+* @Date:   2018-12-29 15:52:50
+* @Last Modified by:   linkzz
+* @Last Modified time: 2018-12-29 16:28:09
+*/
+/* 导航容器样式 */
+.nav{
+    background: #eee;
+    height: 30px;
+    line-height: 30px;
+}
+
+/* 用户部分 */
+.nav .user{
+    float: left;
+}
+
+.nav .user .link{
+    margin-right: 5px;
+}
+
+.nav .user.login{
+    /* 这里.user和.login之间是没有空格的表示class里既有user类又有login类的元素 */
+    display: none;
+}
+
+/* 导航列表 */
+.nav .nav-list{
+    float: right;
+}
+
+.nav .nav-list .nav-item{
+    display: inline-block;
+    margin-left: 5px;
+}

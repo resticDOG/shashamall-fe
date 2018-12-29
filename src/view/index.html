@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
-    <!-- 该语法的作用引用一个loader处理html头文件合成 -->
-    <%= require('html-loader!./layout/html-head.html') %>
+<html lang="en">
+    <head>
+        <%= require('html-loader!./layout/head-common.html') %>
+        <title>shashamall莎莎商城(学习)</title>
+    </head>
     <body>
-        <script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.slim.min.js"></script>
-        Are You Ok? thank you
-        
+        <!-- 引进nav-simple -->
+        <%= require('html-loader!./layout/nav.html') %>
+        <!-- 样式测试 -->
+        <div>
+            <a href="#" class="link">link</a>
+            <a href="#" class="link-text">link-text</a>
+        </div>
+        <div>
+            <a href="#" class="btn">btn</a>
+            <a href="#" class="btn btn-mini">btn-mini</a>
+        </div>
+        <div>
+            <div class="loading"></div>
+        </div>
+        <div>
+            <i class="fa fa-user"></i>
+        </div>
+        <%= require('html-loader!./layout/footer.html')%>
     </body>
 </html>

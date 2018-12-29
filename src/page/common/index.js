@@ -1,8 +1,13 @@
-/*
-* @Author: linkzz
-* @Date:   2018-12-25 10:28:16
-* @Last Modified by:   linkzz
-* @Last Modified time: 2018-12-25 10:29:11
-*/
+/**
+ *  @author linkzz
+ *  @date 2018.12.28
+ */
 
-console.log('i am global');
+//引入layout样式
+require('./layout.css');
+
+// 引入footer样式
+require('./footer/index.css');
+
+//引入font-awsome
+require('node_modules/font-awesome/css/font-awesome.min.css')

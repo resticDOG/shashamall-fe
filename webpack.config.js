@@ -2,11 +2,11 @@
 * @Author: linkzz
 * @Date:   2018-12-24 17:29:45
 * @Last Modified by:   linkzz
-* @Last Modified time: 2018-12-25 12:41:07
+* @Last Modified time: 2018-12-29 15:02:11
 */
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack             = require('webpack');
+var ExtractTextPlugin   = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin   = require('html-webpack-plugin');
 
 //环境变量配置， 开发环境和线上环境 dev / online
 var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
@@ -27,16 +27,27 @@ var getHtmlConfig = function(name){
 var config = {
     entry: {
         'common':['./src/page/common/index.js'],
-        'index': ['./src/page/index/index.js'],
-        'login': ['./src/page/login/index.js']
+        'index' : ['./src/page/index/index.js'],
+        'login' : ['./src/page/login/index.js']
     },
     output: {
-        path: './dist',
-        publicPath: '/dist',
-        filename: 'js/[name].js'
+        path        : './dist',
+        publicPath  : '/dist',
+        filename    : 'js/[name].js'
     },
     externals: {
         'jquery': 'window.jQuery'
+    },
+    //配置别名
+    resolve: {
+        alias: {
+            //别名 _dirname代表根目录
+            node_modules    : __dirname + '/node_modules',
+            util            : __dirname + '/src/util',
+            page            : __dirname + '/src/page',
+            service         : __dirname + '/src/service',
+            image           : __dirname + '/src/image'
+        }
     },
     module: {
         loaders: [
@@ -54,7 +65,7 @@ var config = {
     plugins: [
         // 独立通用模块到js/base.js
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'common',
+            name    : 'common',
             filename: 'js/base.js'
         }),
         // 把css单独打包到文件里
@@ -67,7 +78,7 @@ var config = {
 
 //判断打包环境是否是dev
 if ('dev' === WEBPACK_ENV){
-    config.entry.common.push('webpack-dev-server/client?http://localhost:8088/');   //追加线上环境打包
+    config.entry.common.push('webpack-dev-server/client?http://localhost:8080/');   //追加线上环境打包
 }
 
 module.exports = config;
