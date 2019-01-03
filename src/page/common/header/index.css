@@ -1,0 +1,38 @@
+/*
+* @Author: linkzz
+* @Date:   2019-01-02 10:36:04
+* @Last Modified by:   linkzz
+* @Last Modified time: 2019-01-02 22:06:19
+*/
+/* 通用头部导航 */
+
+.logo{
+    position: absolute;
+    left: 20px;
+    top: 30px;  
+}
+
+.logo .logo-img{
+    width: 203px;
+    height: 60px;
+}
+
+.header .search-con{
+    padding: 40px 0 30px 250px;
+}
+
+.header .search-con .search-input{
+    width: 550px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    font-size: 15px;
+    border: 2px solid #c60023;
+    outline: none;
+}
+
+.header .search-con .search-button{
+    position: absolute;
+    height: 44px;
+    width: 80px;
+}

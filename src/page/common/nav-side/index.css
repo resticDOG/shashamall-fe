@@ -1,0 +1,32 @@
+/*
+* @Author: linkzz
+* @Date:   2019-01-02 22:42:27
+* @Last Modified by:   linkzz
+* @Last Modified time: 2019-01-03 00:21:33
+*/
+/* 导航主题 */
+.nav-side{
+    float: left;
+    width: 130px;
+    min-height: 100px;
+}
+
+.nav-side .nav-item{
+    line-height: 25px;
+    font-size: 13px;
+}
+
+.nav-side .nav-item .link{
+    color: #888;
+}
+
+/* 导航被选中的颜色 */
+.nav-side .nav-item.active .link{
+    color: #c60023;
+}
+
+/* 导航内容区 */
+.content.with-nav{
+    float: left;
+    width: 950px;
+}

@@ -2,7 +2,7 @@
 * @Author: linkzz
 * @Date:   2018-12-24 17:29:45
 * @Last Modified by:   linkzz
-* @Last Modified time: 2018-12-29 15:02:11
+* @Last Modified time: 2019-01-03 10:14:07
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
@@ -13,10 +13,11 @@ var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 console.log(WEBPACK_ENV);
 
 // 获取html的配置参数
-var getHtmlConfig = function(name){
+var getHtmlConfig = function(name, title){
     return {
         template: './src/view/' + name + '.html',
         filename: 'view/' + name + '.html',
+        title   : title,
         inject  : true,
         hash    : true,
         chunks  : ['common', name]
@@ -28,7 +29,8 @@ var config = {
     entry: {
         'common':['./src/page/common/index.js'],
         'index' : ['./src/page/index/index.js'],
-        'login' : ['./src/page/login/index.js']
+        'login' : ['./src/page/login/index.js'],
+        'result' : ['./src/page/result/index.js']
     },
     output: {
         path        : './dist',
@@ -59,6 +61,10 @@ var config = {
             {
                 test    : /\.(gif|png|jpg|woff|svg|ttf|eot)\??.*$/, 
                 loader  : 'url-loader?limit=1000000&name=resource/[name].[ext]'
+            },
+            {
+                test    : /\.string$/,
+                loader  : 'html-loader'
             }
         ]
     },
@@ -71,8 +77,9 @@ var config = {
         // 把css单独打包到文件里
         new ExtractTextPlugin('css/[name].css'),
         // html模板的处理
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login')),
+        new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('login', '登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
     ]
 };
 

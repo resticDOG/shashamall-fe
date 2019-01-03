@@ -7,7 +7,7 @@
 var Hogan = require('hogan.js');
 //定义一个配置对象
 var conf = {
-    serverHost : ""
+    serverHost : "http://www.shashamall.com"
 };
 //输出的工具类对象
 var shashsamallUtil = {
@@ -84,7 +84,7 @@ var shashsamallUtil = {
     },
 
     // 操作失败提示
-    successTips : function(msg){
+    errorTips : function(msg){
         alert(msg || '操作失败');
     },
     // 字段的验证，支持是否非空、是否是手机号、是否是邮箱地址的判断

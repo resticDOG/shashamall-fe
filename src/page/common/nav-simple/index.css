@@ -2,17 +2,18 @@
 * @Author: linkzz
 * @Date:   2018-12-29 15:19:46
 * @Last Modified by:   linkzz
-* @Last Modified time: 2018-12-29 15:34:16
+* @Last Modified time: 2019-01-03 10:52:59
 */
 .nav-simple{
     background: #fff;
-    height: 60px;
-    line-height: 60px;
-    border-bottom: 1px solid #ddd;
 }
 
-.nav-simple .logo{
-    font-size: 26px;
-    font-weight: bold;
-    color: #c60023;
+.logo{
+    height: 60px;
+}
+
+.logo .logo-img{
+    margin: 10px 20px;
+    width: 203px;
+    height: 60px;
 }

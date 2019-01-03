@@ -2,26 +2,20 @@
 <html lang="en">
     <head>
         <%= require('html-loader!./layout/head-common.html') %>
-        <title>shashamall莎莎商城(学习)</title>
+        <title><%= htmlWebpackPlugin.options.title%> - shashamall莎莎商城(学习)</title>
     </head>
     <body>
         <!-- 引进nav-simple -->
         <%= require('html-loader!./layout/nav.html') %>
-        <!-- 样式测试 -->
-        <div>
-            <a href="#" class="link">link</a>
-            <a href="#" class="link-text">link-text</a>
+        <!-- header -->
+        <%= require('html-loader!./layout/header.html') %>
+        <!-- nav-side侧边导航栏 -->
+        <div class="page-wrap w">
+            <%= require('html-loader!./layout/nav-side.html') %>
+            <div class="content with-nav">test</div>
         </div>
-        <div>
-            <a href="#" class="btn">btn</a>
-            <a href="#" class="btn btn-mini">btn-mini</a>
-        </div>
-        <div>
-            <div class="loading"></div>
-        </div>
-        <div>
-            <i class="fa fa-user"></i>
-        </div>
+        
+        <!-- footer -->
         <%= require('html-loader!./layout/footer.html')%>
     </body>
 </html>
