@@ -2,7 +2,7 @@
 * @Author: linkzz
 * @Date:   2019-01-02 10:36:04
 * @Last Modified by:   linkzz
-* @Last Modified time: 2019-01-02 22:06:19
+* @Last Modified time: 2019-01-05 16:14:52
 */
 /* 通用头部导航 */
 
@@ -35,4 +35,15 @@
     position: absolute;
     height: 44px;
     width: 80px;
+}
+
+/* 面包屑导航 */
+.crumb{
+    height: 50px;
+    line-height: 50px;
+    background: #eee;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-top: 2px solid #c60023;
 }

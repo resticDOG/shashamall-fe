@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%= require('html-loader!./layout/head-common.html') %>
+        <title><%= htmlWebpackPlugin.options.title %>--shashamall莎莎商城(学习)</title>
+    </head>
+    <body>
+        <!-- header -->
+        <%= require('html-loader!./layout/nav-simple.html') %>
+        <!-- 最外层容器 -->
+        <div class="page-wrap">
+            <div class="w">
+                <div class="user-con">
+                    <div class="user-title">找回密码</div>
+                    <div class="user-box">
+                        <div class="error-item">
+                            <i class="fa fa-minus-circle error-icon"></i>
+                            <p class="err-msg"></p>
+                        </div>
+                        <!-- 第一步提交用户名 -->
+                        <div class="step-con step-username">
+                            <p class="user-item-text">请输入用户名:</p>
+                            <div class="user-item">
+                                <!-- label里的for属性表示点到label的时候聚焦到相应id的输入框 -->
+                                <label for="username" class="user-label">
+                                    <i class="fa fa-user"></i>
+                                </label>
+                                <!-- autocomplete=off表示关闭自动补全 -->
+                                <input class="user-content" id="username" placeholder="请输入用户名..." autocomplete="off">
+                            </div>
+                            <!-- 下一步 -->
+                            <a class="btn btn-submit" id="submit-username">下一步</a>
+                        </div>
+
+                        <!-- 第二步 提交答案 -->
+                        <div class="step-con step-question">
+                            <p class="user-item-text">您的密码提示问题是:
+                                <span class="question"></span>
+                            </p>
+                            <div class="user-item">
+                                <!-- label里的for属性表示点到label的时候聚焦到相应id的输入框 -->
+                                <label for="question" class="user-label">
+                                    <i class="fa fa-key"></i>
+                                </label>
+                                <!-- autocomplete=off表示关闭自动补全 -->
+                                <input class="user-content" id="question" placeholder="请输入对应提示问题的答案..." autocomplete="off">
+                            </div>
+                            <!-- 下一步 -->
+                            <a class="btn btn-submit" id="submit-question">下一步</a>
+                        </div>
+                        <!-- 第三步 重置密码 -->
+                        <div class="step-con step-password">
+                            <p class="user-item-text">请输入新密码:</p>
+                            <div class="user-item">
+                                <!-- label里的for属性表示点到label的时候聚焦到相应id的输入框 -->
+                                <label for="password" class="user-label">
+                                    <i class="fa fa-lock"></i>
+                                </label>
+                                <!-- autocomplete=off表示关闭自动补全 -->
+                                <input type="password" class="user-content" id="password" placeholder="请输入新密码..." autocomplete="off">
+                            </div>
+                            <a class="btn btn-submit" id="submit-password">重置密码</a>
+                        </div>
+                        
+                        <div class="link-item">
+                            <a href="./user-login.html" class="link">返回登录>></a>
+                        </div>
+                    </div>
+                </div>         
+            </div>
+            
+        </div>
+        
+        <!-- footer -->
+        <%= require('html-loader!./layout/footer.html')%>
+    </body>
+</html>

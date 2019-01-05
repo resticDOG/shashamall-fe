@@ -7,7 +7,7 @@
 var Hogan = require('hogan.js');
 //定义一个配置对象
 var conf = {
-    serverHost : "http://www.shashamall.com"
+    serverHost : "http://www.shashamall.com/mmall"
 };
 //输出的工具类对象
 var shashsamallUtil = {
@@ -110,7 +110,7 @@ var shashsamallUtil = {
     //跳转到登录页面
     doLogin: function(){
         //为了能让登录之后返回登录前页面，需要加上当前页面的路径参数，并且该参数需要编码
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     // 跳转到首页
     goHome : function(){

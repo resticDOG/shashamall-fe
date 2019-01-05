@@ -2,7 +2,7 @@
 * @Author: linkzz
 * @Date:   2019-01-02 22:42:08
 * @Last Modified by:   linkzz
-* @Last Modified time: 2019-01-03 00:19:57
+* @Last Modified time: 2019-01-05 20:26:32
 */
 // 样式
 require('./index.css');
@@ -19,10 +19,10 @@ var navSide = {
     option : {
         name : '',
         navList : [
-            {name : 'user-center', desc : '个人中心', href : './user-center.html'},
-            {name : 'order-list', desc : '我的订单', href : './order-list.html'},
-            {name : 'pass-update', desc : '修改密码', href : './pass-update.html'},
-            {name : 'about', desc : '关于商城', href : './about.html'},
+            {name : 'user-center',  desc : '个人中心', href : './user-center.html'},
+            {name : 'order-list',   desc : '我的订单', href : './order-list.html'},
+            {name : 'pass-update',  desc : '修改密码', href : './user-pass-update.html'},
+            {name : 'about',        desc : '关于商城', href : './about.html'},
         ]
     },
 

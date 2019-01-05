@@ -39,6 +39,26 @@ input[type='checkbox']{
     overflow: hidden;
 }
 
+/* 通用panel样式 */
+.panel{
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.panel .panel-title{
+    font-weight: bold;
+    color: #666;
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.panel .panel-body{
+    padding: 10px;
+    overflow: hidden;
+}
+
 /* 全局通用样式 */
 
 /* 隐藏类 */

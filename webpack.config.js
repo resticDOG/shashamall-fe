@@ -2,15 +2,14 @@
 * @Author: linkzz
 * @Date:   2018-12-24 17:29:45
 * @Last Modified by:   linkzz
-* @Last Modified time: 2019-01-03 10:14:07
+* @Last Modified time: 2019-01-05 20:11:09
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin   = require('html-webpack-plugin');
 
 //环境变量配置， 开发环境和线上环境 dev / online
-var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
-console.log(WEBPACK_ENV);
+var WEBPACK_ENV         = process.env.WEBPACK_ENV || 'dev';
 
 // 获取html的配置参数
 var getHtmlConfig = function(name, title){
@@ -27,10 +26,15 @@ var getHtmlConfig = function(name, title){
 //webpack config
 var config = {
     entry: {
-        'common':['./src/page/common/index.js'],
-        'index' : ['./src/page/index/index.js'],
-        'login' : ['./src/page/login/index.js'],
-        'result' : ['./src/page/result/index.js']
+        'common'                : ['./src/page/common/index.js'],
+        'index'                 : ['./src/page/index/index.js'],
+        'user-login'            : ['./src/page/user-login/index.js'],
+        'user-register'         : ['./src/page/user-register/index.js'],
+        'user-center'           : ['./src/page/user-center/index.js'],
+        'user-center-update'    : ['./src/page/user-center-update/index.js'],
+        'user-pass-reset'       : ['./src/page/user-pass-reset/index.js'],
+        'user-pass-update'       : ['./src/page/user-pass-update/index.js'],
+        'result'                : ['./src/page/result/index.js']
     },
     output: {
         path        : './dist',
@@ -78,7 +82,12 @@ var config = {
         new ExtractTextPlugin('css/[name].css'),
         // html模板的处理
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('login', '登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login', '登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-register', '注册')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '个人信息修改')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '重置密码')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
     ]
 };
