@@ -2,5 +2,156 @@
 * @Author: linkzz
 * @Date:   2018-12-25 10:39:12
 * @Last Modified by:   linkzz
-* @Last Modified time: 2019-01-05 15:57:12
+* @Last Modified time: 2019-01-08 10:46:09
 */
+
+/* keywords-list */
+.keywords-list{
+    float: left;
+    width: 240px;
+    height: 350px;
+    padding: 10px 0;
+    margin-right: 10px;
+    background: #666;
+    color: #fff;
+}
+
+.keywords-list .keywords-item{
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+}
+
+.keywords-list .keywords-item:hover{
+    background: #999;
+}
+
+.keywords-list .keywords-item .link{
+    margin-right: 6px;
+    color: #fff;
+}
+
+.keywords-list .keywords-item .link:hover{
+    color: #c60023;
+}
+
+/* 轮播图 */
+.banner-con{
+    width: 830px;
+    height: 370px;
+    float: left;
+    background: #eee;
+}
+
+.banner-con .loading{
+    margin-top: 70px;
+}
+
+.banner-con .banner-img{
+    width: 100%;
+    height: 370px;
+}
+
+/* 两侧按钮样式 */
+.banner-con .banner-arrow{
+    position: absolute;
+    top: 160px;
+    width: 30px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    background: #ccc;
+    background: rgba(0,0,0,.2);
+    cursor: pointer;
+}
+
+.banner-con .banner-arrow:hover{
+    background: #aaa;
+    background: rgba(0,0,0,.5);
+}
+
+.banner-con .banner-arrow.prev{
+    /* 给盒子边框左上，右上，右下，左下以0，5px，5px，0的倒角 */
+    border-radius: 0 5px 5px 0;
+    left: 0;
+}
+
+.banner-con .banner-arrow.next{
+    border-radius: 5px 0 0 5px;
+    right: 0;
+}
+
+/* floor */
+.floor-wrap .floor-title{
+    height: 50px;
+    line-height: 50px;
+    color: #d58717;
+    font-weight: normal;
+    font-size: 20px;
+    border-bottom: 1px solid #d58717;
+}
+
+/* 更改各楼层标题颜色 */
+.floor-wrap:nth-child(2) .floor-title{
+    /* 不兼容ie8,表示选择第二个名为floor-wrap的类 */
+    color: #3b838c;
+    border-bottom: 1px solid #3b838c;
+}
+
+.floor-wrap:nth-child(3) .floor-title{
+    /* 不兼容ie8,表示选择第二个名为floor-wrap的类 */
+    color: #a93931;
+    border-bottom: 1px solid #a93931;
+}
+
+.floor-wrap:nth-child(4) .floor-title{
+    /* 不兼容ie8,表示选择第二个名为floor-wrap的类 */
+    color: #488bad;
+    border-bottom: 1px solid #488bad;
+}
+
+.floor-wrap:nth-child(5) .floor-title{
+    /* 不兼容ie8,表示选择第二个名为floor-wrap的类 */
+    color: #642663;
+    border-bottom: 1px solid #642663;
+}
+
+.floor-wrap .floor-list{
+    margin-right: -20px;  /* 这里作用是把容器加宽，以撑得下5个li，由于样式是overflow的，右侧超出1080px的部分不会显示 */
+    overflow: hidden;     /* 这里需要清除浮动，以免标题跑到item中去 */
+}
+
+.floor-wrap .floor-list .floor-item{
+    position: relative;
+    width: 200px;
+    height: 220px;
+    margin: 15px 20px 15px 0;
+    float: left;
+    cursor: pointer;
+    background: #fff;
+}
+
+/* 链接悬浮阴影样式 */
+.floor-wrap .floor-list .floor-item:hover{
+    box-shadow: 1px 1px 7px #ddd;
+}
+
+.floor-wrap .floor-list .floor-item .floor-text{
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.floor-wrap .floor-list .floor-item .floor-img{
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    width: 80%;
+    height: 75%;
+    border: none;
+}

@@ -38,6 +38,9 @@ var shashsamallUtil = {
                     // status 1代表请求的数据错误
                     typeof paramInfo.error === 'function' && paramInfo.error(res.msg);
                 }
+                else {
+                    typeof paramInfo.error === 'function' && paramInfo.error(res.msg);
+                }
             },
             //请求失败的回调函数
             error: function(err){

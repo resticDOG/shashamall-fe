@@ -2,7 +2,7 @@
 * @Author: linkzz
 * @Date:   2018-12-29 15:52:34
 * @Last Modified by:   linkzz
-* @Last Modified time: 2019-01-04 12:10:24
+* @Last Modified time: 2019-01-14 21:54:37
 */
 // 样式
 require('./index.css');
@@ -69,10 +69,10 @@ var nav = {
     loadCartCount : function(){
         _cart.getCartCount(function(res){
             //成功获取购物车数量，显示在页面中
-            $('.nav-cart-count').text(res || 0);
+            $('.cart-count').text(res || 0);
         }, function(errMsg){
             //错误则显示0
-            $('.nav-cart-count').text(0);
+            $('.cart-count').text(0);
         });
     }
 }

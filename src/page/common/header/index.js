@@ -2,7 +2,7 @@
 * @Author: linkzz
 * @Date:   2019-01-02 10:35:51
 * @Last Modified by:   linkzz
-* @Last Modified time: 2019-01-02 22:05:43
+* @Last Modified time: 2019-01-08 11:58:26
 */
 require('./index.css');
 
@@ -12,6 +12,8 @@ var _util = require('util/util.js');
 var header = {
     //初始化
     init : function(){
+        //关键词回填
+        this.onLoad();
         // 绑定事件
         this.bindEvent();
         

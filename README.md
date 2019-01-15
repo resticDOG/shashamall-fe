@@ -2,8 +2,8 @@
 #### 1. 项目介绍
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该项目是本人练手的项目，慕课网从零打造商城的前端项目项目的一些学习心得会在这里更新，想了下就当做学习笔记吧，同时在学习过程中遇到坑也会在此文档更新，你也可以在[我的博客](https://www.cnblogs.com/linkzz/ "linkzz的博客")浏览学习笔记。
 #### 2. 传送门
-- *心得*
-- *技巧*
+- [*心得*](# 心得)
+- [*技巧*](# 技巧)
 - *修改的地方*
 - *踩坑记录*
 #### 3. 心得
@@ -51,9 +51,9 @@ if (validataResult.status){
 
 
 #### 6. 踩坑记录
-1. **html模板渲染工具**hogan**的引用报错**<br/><br/>
+- **html模板渲染工具**hogan**的引用报错**<br/><br/>
     执行 `npm install hogan --save` 将hogen作为项目生产环境依赖安装之后 `require('hogan')` 之后打包报错: `Cannot resolve module 'hogan'` ，查阅资料之后发现是引用位置变更了，新版本的hogen模块是在node_modules下的hogan.js中，故重新引入 `require('hogan.js')` 之后打包成功。<br><br>
-2. **`<mata http-equiv="x-ua-compatible" content="ie=edge" />`让网页元素检查时`meta`标签跑到`body`标签当中**<br/><br/>
+- **`<mata http-equiv="x-ua-compatible" content="ie=edge" />`让网页元素检查时`meta`标签跑到`body`标签当中**<br/><br/>
     使用了`<mata http-equiv="x-ua-compatible" content="ie=edge" />`标签之后发现网页元素检查时`meta`标签错位了，本该包含在`head`标签内的`meta`标签跑到了`body`标签中，目前原因尚不知晓（原谅我是个前端菜鸟 ^_^），删去该行内容后正常。<br>
     源代码显示正常:<br>
     ![源代码显示正常](screenshot/before1.png "源代码显示正常")<br>
@@ -62,7 +62,7 @@ if (validataResult.status){
     修改后显示正常:<br>
     ![修改后显示正常](screenshot/after.png "修改后显示正常")<br>
     <br>
-3. **nginx代理导致session丢失？**<br><br>
+- **nginx代理导致session丢失？**<br><br>
         在测试后端接口的过程中发现系统不能记录我的登录状态，每次登录之后再调用查询用户信息的接口返回的结果都是用户未登录。后端的登录接口如下：<br>
 ```java
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
@@ -115,6 +115,85 @@ nginx作如下配置：<br>
             }
     }
 ```
+- **使用Hogan渲染html模板加载图片出错**<br>
+在从服务器加载数据并渲染商品列表的时候出现`Cannot find module "./{{imageHost}}{{mainImage}}"`错误，查看返回的json字段信息如下:<br>
+```json
+{
+    "status": 0,
+    "data": {
+        "pageNum": 1,
+        "pageSize": 10,
+        "size": 1,
+        "orderBy": "price asc",
+        "startRow": 1,
+        "endRow": 1,
+        "total": 1,
+        "pages": 1,
+        "list": [
+            {
+                "id": 26,
+                "categoryId": 100002,
+                "name": "Apple iPhone 7 Plus (A1661) 128G 玫瑰金色 移动联通电信4G手机",
+                "subtitle": "iPhone 7，现更以红色呈现。",
+                "mainImage": "241997c4-9e62-4824-b7f0-7425c3c28917.jpeg",
+                "price": 6999,
+                "status": 1,
+                "imageHost": "//img.shashamall.com/"
+            }
+        ],
+        "firstPage": 1,
+        "prePage": 0,
+        "nextPage": 0,
+        "lastPage": 1,
+        "isFirstPage": true,
+        "isLastPage": true,
+        "hasPreviousPage": false,
+        "hasNextPage": false,
+        "navigatePages": 8,
+        "navigatepageNums": [
+            1
+        ]
+    }
+}
+```
+HTML模板的string文件如下：<br>
+```html
+{{#list}}
+    <li class="p-item">
+        <div class="p-img-con">
+            <a href="./detail.html?productId={{id}}" target="_blank" class="link">
+                <img src='{{imageHost}}{{mainImage}}' alt="{{name}}">
+            </a>
+        </div>
+        <div class="p-price-con">
+            <span class="p-price">￥{{price}}</span>
+        </div>
+        <div class="p-name-con">
+            <a href="./detail.html?productId={{id}}" target="_blank" class="p-name">{{name}}</a>
+        </div>
+    </li>
+{{/list}}
+```
+页面传参如下：<br>
+```js
+// 调用service层
+_product.getProducts(listParam, function(res){
+    listHtml = _util.renderHtml(templateIndex, {
+        list : res.list
+    });
+    // 将渲染成功的html放入容器
+    $('.p-list-con').html(listHtml);
+    // 渲染分页信息
+    _this.loadPagination(res.pageNum, res.pages);
+}, function(errMsg){
+    // 错误提示
+    _util.errorTips(errMsg);
+});
+```
+按道理`img`标签的`src`属性应该会解析成`//img.shashamall.com/241997c4-9e62-4824-b7f0-7425c3c28917.jpeg`，然后这里浏览器解析的时候应该会加上`http`从而获取图片资源的，可是这里却报错。多番尝试之后在模板src前添加"`/`"符号解决问题，目前原因并不知道，这里先记录这个错误，后续再查阅资料，也希望知道的大神告知，解我疑惑！
+>解决方法：
+改`<img src='{{imageHost}}{{mainImage}}' alt="{{name}}">`为`<img src='/{{imageHost}}{{mainImage}}' alt="{{name}}">`
+
 
 
 

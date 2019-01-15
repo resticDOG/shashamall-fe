@@ -1,0 +1,47 @@
+/*
+* @Author: linkzz
+* @Date:   2019-01-12 17:20:24
+* @Last Modified by:   linkzz
+* @Last Modified time: 2019-01-12 20:54:06
+*/
+.pg-content{
+    color: #333;
+    text-align: center;
+}
+
+.pg-content .pg-item{
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 15px;
+    margin: 0 2px;
+    border: 1px solid #ccc;
+    background: #eee;
+    cursor: pointer;
+    /* 这段文本用户是不能选中的，前缀表示不同浏览器的适配 */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.pg-content .pg-item.disabled{
+    color: #ccc;
+    background: none;
+    cursor: auto;
+    border: 1px solid #ccc;
+}
+
+.pg-content .pg-item.active{
+    background: #c60023;
+    border : 1px solid #c60023;
+    color: #fff;
+    cursor: auto;
+}
+
+.pg-content .pg-total {
+    font-size: 13px;
+    background: none;
+    cursor: auto;
+    margin-left: 20px;
+}
