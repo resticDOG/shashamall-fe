@@ -2,7 +2,7 @@
 * @Author: linkzz
 * @Date:   2019-01-13 15:37:08
 * @Last Modified by:   linkzz
-* @Last Modified time: 2019-01-14 19:40:20
+* @Last Modified time: 2019-01-16 00:17:17
 */
 .intro-wrap{
     overflow: hidden;
@@ -166,6 +166,7 @@
     display: block;
 }
 
+/* 错误提示 */
 .err-tip{
     height: 60px;
     line-height: 60px;

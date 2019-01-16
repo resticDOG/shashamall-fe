@@ -1,0 +1,148 @@
+/*
+* @Author: linkzz
+* @Date:   2019-01-15 22:13:34
+* @Last Modified by:   linkzz
+* @Last Modified time: 2019-01-16 00:17:24
+*/
+.cart-table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin-bottom: 10px;
+}
+
+.cart-header{
+    background: #eee;
+}
+
+.cart-table .cart-cell{
+    height: 40px;
+    line-height: 40px;
+}
+
+.cart-table .cell-check{
+    width: 6%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.cart-table .cell-img{
+    width: 10%;
+    text-align: left;
+}
+
+.cart-table .cell-img .p-img{
+    margin: 10px 0;
+    height: 80px;
+    width: 80px;
+    border: 1px solid #ddd;
+}
+
+/* 商品信息表头文案右移 */
+.cart-header .cell-info{
+    width: 45%;
+    padding-left: 109px;
+}
+
+.cart-table .cell-info{
+    width: 35%;
+    text-align: left;
+}
+
+.cart-table .cell-price{
+    width: 10%;
+    text-align: center;
+}
+
+.cart-table .cell-count{
+    width: 15%;
+    text-align: center;
+}
+
+.cart-table .cell-count .count-input{
+    width: 60px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+    outline: none;
+    color: #333;
+}
+/* 加减按钮 */
+.cart-table .cell-count .count-btn{
+    /* 必须让span变成块级元素设置宽度才有用 */
+    display: inline-block;
+    width: 20px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.cart-table .cell-total{
+    width: 14%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cart-table .cell-opera{
+    width: 10%;
+    text-align: center;
+}
+
+/* footer */
+.cart-footer{
+    /* 子元素都是浮动的话，需要清除父元素的浮动，否则父元素会无高度 */
+    overflow: hidden;
+    position: relative;
+    line-height: 50px;
+    background: #eee;
+}
+
+.cart-footer .select-con{
+    float: left;
+    padding-left: 20px;
+}
+
+.cart-footer .delete-con{
+    float: left;
+    margin-left: 20px;
+}
+
+.cart-footer .submit-con{
+    float: right;
+}
+
+.cart-footer .submit-con .submit-total{
+    font-size: 18px;
+    color: #c60023;
+    font-weight: bold;
+    margin-right: 30px;
+    vertical-align: middle;
+}
+
+.cart-footer .submit-con .btn-submit{
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+/* 错误提示 */
+.err-tip{
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    color: #f60;
+    font-weight: bold;
+    text-align: center;
+    background: #eee;
+}
