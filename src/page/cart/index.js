@@ -2,7 +2,7 @@
 * @Author: linkzz
 * @Date:   2019-01-15 22:13:27
 * @Last Modified by:   linkzz
-* @Last Modified time: 2019-01-16 20:57:27
+* @Last Modified time: 2019-01-20 17:02:40
 */
 // 自身css
 require('./index.css');
@@ -156,7 +156,7 @@ var page = {
             // 根据商品总价判断是否有商品被选中
             if (_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0){
                 // 跳转到订单确认页
-                window.location.href = './confirm.html';
+                window.location.href = './order-confirm.html';
             } else {
                 _util.errorTips('请选择商品后再提交');
             }
