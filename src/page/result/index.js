@@ -2,7 +2,7 @@
 * @Author: linkzz
 * @Date:   2019-01-03 10:11:46
 * @Last Modified by:   linkzz
-* @Last Modified time: 2019-01-03 11:13:00
+* @Last Modified time: 2019-01-28 18:35:48
 */
 // css文件
 require('./index.css');
@@ -22,5 +22,10 @@ $(function(){
     var type = _util.getUrlParam('type') || 'default';
     // 选取对应的div类并显示出来
     var $element = $('.' + type + '-success');
+    if (type === 'payment'){
+        var orderNo         = _util.getUrlParam('orderNo'),
+            $orderNumber    = $element.find('.order-number');
+        $orderNumber.attr('href', $orderNumber.attr('href') + orderNo);
+    }
     $element.show();
 });
