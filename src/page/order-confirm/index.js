@@ -2,7 +2,7 @@
 * @Author: linkzz
 * @Date:   2019-01-20 16:00:35
 * @Last Modified by:   linkzz
-* @Last Modified time: 2019-01-23 22:31:17
+* @Last Modified time: 2019-02-02 19:39:47
 */
 // 自身css
 require('./index.css');
@@ -125,7 +125,6 @@ var page = {
      * 加载商品列表
      */
     loadProductList : function(){
-        var _this = this;
         // 添加loading图片
         $('.product-con').html('<div class="loading"></div>');
         _order.getProductList(function(res){

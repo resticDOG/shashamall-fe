@@ -2,7 +2,7 @@
 * @Author: linkzz
 * @Date:   2019-01-28 15:38:27
 * @Last Modified by:   linkzz
-* @Last Modified time: 2019-01-28 18:10:14
+* @Last Modified time: 2019-02-02 19:21:03
 */
 // 自身css
 require('./index.css');
@@ -63,7 +63,7 @@ var page = {
         this.paymentTimer = window.setInterval(function(){
             _payment.getPaymentStatus(_this.data.orderNo, function(res){
                 // 如果后端返回data=true即表示订单支付成功
-                if (res == true){
+                if (res === true){
                     // 跳转支付成功结果页
                     window.location.href = './result.html?type=payment&orderNo=' + _this.data.orderNo;
                 }

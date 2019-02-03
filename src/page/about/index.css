@@ -1,0 +1,15 @@
+/*
+* @Author: linkzz
+* @Date:   2019-02-03 17:09:57
+* @Last Modified by:   linkzz
+* @Last Modified time: 2019-02-03 20:27:15
+*/
+.about-con{
+    float: right;
+    width: 950px;
+}
+
+.about-con .panel-body{
+    color: #333;
+    line-height: 20px;
+}

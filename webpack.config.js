@@ -2,7 +2,7 @@
 * @Author: linkzz
 * @Date:   2018-12-24 17:29:45
 * @Last Modified by:   linkzz
-* @Last Modified time: 2019-01-28 15:37:04
+* @Last Modified time: 2019-02-03 16:07:44
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
@@ -16,6 +16,7 @@ var getHtmlConfig = function(name, title){
     return {
         template: './src/view/' + name + '.html',
         filename: 'view/' + name + '.html',
+        favicon : './favicon.ico',
         title   : title,
         inject  : true,
         hash    : true,
@@ -28,6 +29,7 @@ var config = {
     entry: {
         'common'                : ['./src/page/common/index.js'],
         'index'                 : ['./src/page/index/index.js'],
+        'about'                 : ['./src/page/about/index.js'],
         'list'                  : ['./src/page/list/index.js'],
         'cart'                  : ['./src/page/cart/index.js'],
         'detail'                : ['./src/page/detail/index.js'],
@@ -44,8 +46,9 @@ var config = {
         'result'                : ['./src/page/result/index.js']
     },
     output: {
-        path        : './dist',
-        publicPath  : '/dist',
+        // webpack2版本后不再支持相对路径
+        path        : __dirname + '/dist/',
+        publicPath  : 'dev' === WEBPACK_ENV ? '/dist/' : '//s.shashamall.com/dist/',
         filename    : 'js/[name].js'
     },
     externals: {
@@ -71,11 +74,18 @@ var config = {
             //按照这种格式写loader才会生效
             {
                 test    : /\.(gif|png|jpg|woff|svg|ttf|eot)\??.*$/, 
-                loader  : 'url-loader?limit=1000000&name=resource/[name].[ext]'
+                loader  : 'url-loader?limit=1000&name=resource/[name].[ext]'
             },
             {
                 test    : /\.string$/,
-                loader  : 'html-loader'
+                loader  : 'html-loader',
+                query   : {
+                    // 处理String时最小化压缩
+                    minimize              : true,
+                    // 压缩是不移除引号
+                    removeAttributeQuotes : false
+
+                }
             }
         ]
     },
@@ -102,6 +112,7 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
         new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+        new HtmlWebpackPlugin(getHtmlConfig('about', '关于')),
         new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情'))
     ]
 };

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%= require('html-loader!./layout/head-common.html') %>
+        <title><%= htmlWebpackPlugin.options.title%> - shashamall莎莎商城(学习)</title>
+    </head>
+    <body>
+        <!-- 引进nav-simple -->
+        <%= require('html-loader!./layout/nav.html') %>
+        <!-- header -->
+        <%= require('html-loader!./layout/header.html') %>
+        <!-- 面包屑导航 -->
+        <div class="crumb">
+            <div class="w">
+                <div class="crumb-con">
+                    <a href="./index.html" class="link">首页</a>
+                    <span>>></span>
+                    <span class="link-text"><%= htmlWebpackPlugin.options.title%></span>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrap w">
+            <!-- nav-side侧边导航栏 -->
+            <%= require('html-loader!./layout/nav-side.html') %>
+            <div class="about-con">
+                <div class="panel">
+                    <div class="panel-title">关于ShaShaMall</div>
+                    <div class="panel-body">
+                        欢迎大家访问ShaShaMall,值此新年之际，祝大家新春大吉，阖家幸福！<br>
+                        这个网站的产生，首先要感谢慕课网后端的Geely老师、和前端的Rosen老师，通过两位老师的课程，我真的学到了很多，同时也拿到了一份Java开发的offer，我是16年毕业的，毕业之后从事了2年企业安全员的工作，奈何发展受限，最后在妻子的鼓励下，决定从零开始Java学习，一个非计算机专业的人学习编程，真的很吃力，其间有想过放弃，所幸最后坚持了下来，并最终尝到了努力的甜头。在此，若你是Java自学者，若你在学习中遇到了困难，我希望你能坚持下去，努力的人都很幸运！<br>
+                        同时，我这个项目的代码都放到了GitHub，若你对项目有好的建议，或者有什么心得想与我交流，你可以在这里给我提issue:<a href="//github.com/resticDOG/shashamall-fe" target="_blank" class="link">前端</a>、<a href="//github.com/resticDOG/mmall" target="_blank" class="link">后端</a>
+                        <br>本站所有资源来自于网络，若有侵权，请联系我，我会及时删除。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- footer -->
+        <%= require('html-loader!./layout/footer.html')%>
+    </body>
+</html>
