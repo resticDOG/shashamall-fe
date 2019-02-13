@@ -1,8 +1,8 @@
 /*
 * @Author: linkzz
 * @Date:   2018-12-24 17:29:45
-* @Last Modified by:   linkzz
-* @Last Modified time: 2019-02-03 16:07:44
+* @Last Modified by:   resticDOG
+* @Last Modified time: 2019-02-13 18:28:21
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
@@ -48,7 +48,7 @@ var config = {
     output: {
         // webpack2版本后不再支持相对路径
         path        : __dirname + '/dist/',
-        publicPath  : 'dev' === WEBPACK_ENV ? '/dist/' : '//s.shashamall.com/dist/',
+        publicPath  : 'dev' === WEBPACK_ENV ? '/dist/' : '//s.shashamall.xyz/shashamall-fe/dist/',
         filename    : 'js/[name].js'
     },
     externals: {

@@ -7,7 +7,7 @@
 var Hogan = require('hogan.js');
 //定义一个配置对象
 var conf = {
-    serverHost : "http://www.testshasha.com/mmall"
+    serverHost : "http://www.shashamall.xyz/"
 };
 //输出的工具类对象
 var shashsamallUtil = {

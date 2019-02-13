@@ -110,7 +110,7 @@ nginx作如下配置：<br>
             }
             location / {
                     proxy_pass http://127.0.0.1:8088/mmall/;
-                    proxy_cookie_path /mmall /;            //问题所在
+                    mejpegjproxy_cookie_path /mmall /;            //问题所在
                     add_header Access-Control-Allow-Origin *;
             }
     }
@@ -193,6 +193,8 @@ _product.getProducts(listParam, function(res){
 按道理`img`标签的`src`属性应该会解析成`//img.shashamall.com/241997c4-9e62-4824-b7f0-7425c3c28917.jpeg`，然后这里浏览器解析的时候应该会加上`http`从而获取图片资源的，可是这里却报错。多番尝试之后在模板src前添加"`/`"符号解决问题，目前原因并不知道，这里先记录这个错误，后续再查阅资料，也希望知道的大神告知，解我疑惑！
 >解决方法：
 改`<img src='{{imageHost}}{{mainImage}}' alt="{{name}}">`为`<img src='/{{imageHost}}{{mainImage}}' alt="{{name}}">`
+- **后台管理系统无法预览**
+在后台管理系统的代码下载并按照README.md文件执行安装后打开发现console报错: `Simditor.connect is not a function`，检查数遍之后才发现是simditor没安装好，执行`npm install simditor@2.3.6 --save`之后成功解决。
 
 
 
